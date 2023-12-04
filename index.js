@@ -1,12 +1,17 @@
 const express = require('express');
 const app = express();
 
-app.listen(3000, () => {
-    console.log('listening on port 3000');
-});
+
 
 const clientRequest = (req, res) => {
-    console.log('client says hello');
+    const userInfo = req.query.user;
+    console.log(userInfo);
 }
 
 app.get('/', clientRequest);
+
+
+const Port = 3000;
+app.listen(Port, () => {
+    console.log('listening on port 3000');
+});
